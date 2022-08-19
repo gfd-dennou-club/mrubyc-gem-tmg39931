@@ -1,3 +1,4 @@
+# coding: utf-8
 # 参考:https://github.com/Seeed-Studio/Seeed_TMG3993
 class TMG39931
   # Enable bits
@@ -217,7 +218,7 @@ class TMG39931
 
   def read_regs(addr, len)
     @i2c.write(@address, addr)
-    @i2c.read_integer(@address, len)
+    @i2c.readfrom(@address, len)
   end
 
   def write_regs(data)
