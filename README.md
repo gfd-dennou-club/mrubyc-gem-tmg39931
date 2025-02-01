@@ -9,7 +9,7 @@ https://files.seeedstudio.com/wiki/Grove-Light-Gesture-Color-Proximity_Sensor-TM
 
 ## sample code
 ```ruby
-i2c = I2C.new(22,21)
+i2c = I2C.new()
 tmg = TMG39931.new(i2c)
 
 if !tmg.init
