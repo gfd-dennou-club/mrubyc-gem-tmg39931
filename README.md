@@ -18,8 +18,7 @@ else
   tmg.setup_recommended_config_for_proximity
   tmg.set_proximity_interrupt_threshold(25, 150) # less than 5cm sill trigger the proximity event
   tmg.set_adc_integration_time(0xdb) # the integration time: 103ms
-  tmg.enable_engines(TMG39931::ENABLE[:PON] | TMG39931::ENABLE[:PEN] | TMG39931::ENABLE[:PIEN] | TMG399\
-31::ENABLE[:AEN] | TMG39931::ENABLE[:AIEN])
+  tmg.enable_engines(TMG39931::ENABLE[:PON] | TMG39931::ENABLE[:PEN] | TMG39931::ENABLE[:PIEN] | TMG39931::ENABLE[:AEN] | TMG39931::ENABLE[:AIEN])
   last_interrupt_state = -1
   loop do
     if (tmg.get_status & (TMG39931::STATUS[:PINT] | TMG39931::STATUS[:AVALID])) != 0
