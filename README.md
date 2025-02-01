@@ -8,6 +8,24 @@ https://jp.seeedstudio.com/Grove-Light-Color-Proximity-Sensor-TMG39931-p-2879.ht
 https://files.seeedstudio.com/wiki/Grove-Light-Gesture-Color-Proximity_Sensor-TMG39931/res/TMG3993.pdf
 
 ## sample code
+
+明るさ (LUX) の検知のみ
+```ruby
+i2c = I2C.new()
+tmg = TMG39931.new(i2c)
+
+if !tmg.init
+  puts 'Device not found. Check wiring.'
+else
+  loop do
+    data = tmg.get_rgbc_raw
+    puts tmg.get_lux(data)
+    sleep 0.1
+  end
+end
+```
+
+
 ```ruby
 i2c = I2C.new()
 tmg = TMG39931.new(i2c)
